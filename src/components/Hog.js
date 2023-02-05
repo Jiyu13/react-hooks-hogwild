@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Hog({ name, specialty, greased, weight, image}) {
+function Hog({ name, specialty, greased, weight, image, medal}) {
 
     const [showDetails, setShowDetails] = useState(false)
     const isDisplay = showDetails ? "" : "none"
@@ -18,7 +18,7 @@ function Hog({ name, specialty, greased, weight, image}) {
                 <p name={specialty}>{specialty}</p>
                 <p name={weight}>{weight}</p>
                 <p name="greased">{isGreased}</p>
-                <p>highest medal achieved</p>
+                <p>Highest Medal Achieved: {medal}</p>
             </div>
         </div>
     )
