@@ -4,10 +4,10 @@ function Hog({ name, specialty, greased, weight, image}) {
 
     const [showDetails, setShowDetails] = useState(false)
     const isDisplay = showDetails ? "" : "none"
+    const isGreased = greased ? "Greased" : "Not greased"
 
     function handleToggleDetails() {
         setShowDetails(show => !show)
-        console.log(showDetails)
     }
 
     return (
@@ -17,7 +17,7 @@ function Hog({ name, specialty, greased, weight, image}) {
             <div className="details" style={{display:isDisplay}}>
                 <p name={specialty}>{specialty}</p>
                 <p name={weight}>{weight}</p>
-                <p name="greased">{greased}</p>
+                <p name="greased">{isGreased}</p>
                 <p>highest medal achieved</p>
             </div>
         </div>
