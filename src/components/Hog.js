@@ -11,8 +11,8 @@ function Hog({ name, specialty, greased, weight, image}) {
     }
 
     return (
-        <div className="ui eight wide column pigTile">
-            <div id={name}>{name}</div>
+        <div className="ui eight wide column pigTile" name={name} id={name}>
+            <div>{name}</div>
             <img src={image} alt={name} onClick={handleToggleDetails}/>
             <div className="details" style={{display:isDisplay}}>
                 <p name={specialty}>{specialty}</p>
