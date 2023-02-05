@@ -10,6 +10,7 @@ function HogList({ hogs }) {
                 greased={hog.greased}
                 weight={hog.weight}
                 image={hog.image}
+                medal={hog["highest medal achieved"]}
             />
     })
 
