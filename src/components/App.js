@@ -5,6 +5,7 @@ import GreasedFilter from "./GreasedFilter";
 import Sort from "./Sort";
 
 import hogs from "../porkers_data";
+import NewHogForm from "./NewHogForm";
 
 function App() {
 
@@ -20,7 +21,11 @@ function App() {
 		setSortBy(event.target.value)
 	}
 
-	console.log(sortBy)
+	// takes in newHog, add it to hogList, pass this func into NewHogForm 
+	function onAddHog(newHog) {
+		setHogList([...hogList, newHog])
+	}
+
 	const sortArray = hogList.sort((a, b) => {
 		if (sortBy === "name") {
 			return a.name.localeCompare(b.name)
@@ -31,7 +36,6 @@ function App() {
 			return hogList
 		}
 	})
-	console.log(sortArray)
 
 
 	return (
@@ -39,7 +43,11 @@ function App() {
 			<Nav />
 			<Sort onSortChange={handleSort} sort={sortBy}/>
 			<GreasedFilter onGreasedFilter={handleGreasedFilter}/>
-			<HogList hogs={sortArray}/>
+			<div>
+				<NewHogForm onHogFormSubmit={onAddHog}/>
+				<HogList hogs={sortArray}/>
+			</div>
+			
 		</div>
 	);
 }
